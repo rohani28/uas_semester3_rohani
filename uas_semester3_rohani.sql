@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.7.1
+-- version 3.1.3.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: 22 Feb 2020 pada 16.36
--- Versi Server: 5.6.20
--- PHP Version: 5.5.15
+-- Host: localhost
+-- Generation Time: Feb 27, 2020 at 08:27 PM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,13 +16,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `uas_semester3`
+-- Database: `uas_semester3_rohani`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `barang`
+-- Table structure for table `barang`
 --
 
 CREATE TABLE IF NOT EXISTS `barang` (
@@ -34,20 +33,21 @@ CREATE TABLE IF NOT EXISTS `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `barang`
+-- Dumping data for table `barang`
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `kategori_id`, `satuan_id`) VALUES
-(1, 'Cat tembok', 1, 1),
-(2, 'Cat Kayu Dan Besi', 2, 2),
-(3, 'Hampelas', 3, 3),
-(4, 'Pipa Power', 4, 4),
-(5, 'Cat Pelapis Anti Bocor', 5, 5);
+(2, 'Jersey futsal', 2, 2),
+(3, 'Jaket kulit', 3, 3),
+(4, 'Sepatu futsal', 4, 4),
+(5, 'Sendal gunung eiger', 5, 5),
+(1, 'celana smp dan sma', 1, 1),
+(1, 'sepatu', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE IF NOT EXISTS `kategori` (
@@ -56,20 +56,21 @@ CREATE TABLE IF NOT EXISTS `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama`) VALUES
-(1, 'Cat'),
-(2, 'Cat'),
-(3, 'Bahan Bangunan'),
-(4, 'Pipa'),
-(5, 'Cat');
+(1, 'Celana'),
+(2, 'Baju'),
+(3, 'Jaket'),
+(4, 'Sepatu'),
+(5, 'Sendal'),
+(1, 'baju jersey');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `satuan`
+-- Table structure for table `satuan`
 --
 
 CREATE TABLE IF NOT EXISTS `satuan` (
@@ -78,20 +79,21 @@ CREATE TABLE IF NOT EXISTS `satuan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `satuan`
+-- Dumping data for table `satuan`
 --
 
 INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES
-(1, 'Galon'),
-(2, 'Kaleng'),
-(3, 'Roll'),
-(4, 'In'),
-(5, 'Pail');
+(1, 'Pcs'),
+(2, 'Pcs'),
+(3, 'Kodi'),
+(4, 'Pcs'),
+(5, 'Dus'),
+(1, 'sendal');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE IF NOT EXISTS `transaksi` (
@@ -104,16 +106,12 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `transaksi`
+-- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `nama_transaksi`, `tgl_transaksi`, `harga`, `qty`, `id_barang`) VALUES
-(1, 'Pembelian Cat Tembok', '2020-01-27', 250000, 100, 1),
-(2, 'Pembelian Cat Kayu', '2020-02-11', 75000, 1, 2),
-(3, 'Pembelian Hampelas', '2020-02-11', 120000, 10, 3),
-(4, 'Pembelian PIPA', '2020-03-04', 300000, 20, 4),
-(5, 'Pembelian Cat Anti Bocor', '2020-02-03', 300000, 12, 5);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+(1, 'Pembelian celana sekolah', '2020-02-10', 80000, 5, 1),
+(2, 'Pembelian baju jersey', '2020-02-11', 50000, 100, 2),
+(3, 'Pembelian jaket hitam', '2020-02-11', 250000, 25, 3),
+(4, 'Pembelian sepatu cats', '2020-03-04', 300000, 20, 4),
+(5, 'Pembelian sendal gunung', '2020-02-03', 150000, 10, 5);
